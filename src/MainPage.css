@@ -1,0 +1,259 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-image: url('https://images.unsplash.com/photo-1565843708714-52ecf69ab81f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=872&q=80');
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+#Page
+{
+    padding: 2vh 5vw;
+}
+
+#root
+{
+    display: grid;
+    grid-template-areas: 
+    "nav nav nav" 
+    "posts posts side"
+    "posts posts side"
+    "footer footer footer";
+}
+
+/*Navbar -----------------------*/
+#AppIcon
+{
+    margin-top: 1.25vh;
+    margin: auto;
+    font-size: 1.5em;
+}
+nav, footer
+{
+    grid-area: nav;
+
+    width: 90vw;
+    height: 10vh;
+    border-bottom: black thick solid;
+    border-right: black thick solid;
+    border-top: rgba(50, 214, 160, 0.8) thick solid;
+    border-left: rgba(50, 214, 160, 0.8) thick solid;;
+    background-image:linear-gradient(90deg, rgba(57, 235, 175, 0.8),rgba(20, 20, 20, 0.5),  rgba(57, 235, 175, 0.8));
+    box-sizing: border-box;
+}
+nav
+{
+    position: sticky;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.button
+{
+    margin-top: 1.6vh;
+    width: 15vw;
+    font-size: large;
+    border: rgb(0, 68, 62) thin solid;
+    color: white;
+    background-color: black;
+    padding: 1vh 1vw;
+}
+
+.Options
+{
+    position: absolute;
+    background-color: rgb(1, 184, 123);
+    width: 15vw;
+    z-index: 1;
+    box-sizing: border-box;
+    list-style:none;
+    margin-top: -10vh;
+    transition: transform 500ms, color 500ms, margin-top 500ms
+}
+.Option
+{
+    border-top: thin black solid;
+    background-color: rgba(43, 184, 172, 0.4);
+    text-align: center;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.Option:hover
+{
+    transition: background-color 250ms;
+    background-color: rgba(96, 255, 242, 0.4);
+}
+#search-bar
+{
+    display: flex;
+    flex-direction: row;
+    margin: 0 1vw;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+#search-bar input
+{
+    padding-left: 1vw;
+    background-color: rgb(82, 82, 82);
+    color: white;
+    margin-left: 1vw;
+}
+#search-button
+{
+    width: 100%;
+    padding-left: 5px !important;
+    padding-right: 5px;
+    transition: background-color 250ms;
+}
+#search-button:hover{background-color:rgb(131, 131, 131)}
+#LoginButton
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(150, 221, 221, 0.8);
+    border: solid black thin;
+    margin: 1.5vh 1.5vw;
+}
+#LoginButton:hover
+{
+    background-color: rgba(74, 109, 109, 0.8);
+    transition: background-color 250ms;
+
+}
+
+/*Posts ---------------------------*/
+textarea, p
+{
+    padding-left: 1vw;
+}
+#posts
+{
+    grid-area: posts;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 60vw;
+    min-height: 75vh;
+    background-color:rgba(54, 54, 54, 0.9);
+    border: thin solid darkslateblue;
+    padding: 1vh 1vw;
+}
+#posts-section
+{
+    margin-top: 2vh;
+    border-top: 3px solid black;
+}
+#add-post
+{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}
+#add-post input
+{
+    padding-left: 1vw;
+}
+.User
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-area: user;
+}
+
+.Post
+{
+    display: grid;
+    grid-template-areas: 
+    "user none title"
+    "content content content"
+    "attributes attributes attributes"
+    "commentS commentS commentS";
+
+    background-color: gray;
+    margin: 1.5vh 0;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.45);
+}
+.Title
+{
+    font-size: 1.25em;
+    width: 100%;
+    height: 100%;
+    background-color: aliceblue;
+    text-align: center;
+}
+#write-content
+{
+    max-width: 100%;
+}
+.Content
+{
+    grid-area: content;
+    background-color: rgb(190, 190, 190);
+    padding: 2vh 0 2vh 1vw;
+    resize: none;
+    max-width: 100%;
+    overflow: auto;
+    font-size: 1.25em;
+}
+.Attributes
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-area: attributes;
+    text-align: center;
+    color: black;
+}
+.CommentSection
+{
+    grid-area: commentS;
+}
+.icon:hover
+{
+    color:rgb(0, 255, 221);
+    transition: color 250ms;
+    cursor:pointer;
+}
+/*Aside ----------------------------*/
+aside
+{
+    display: flex;
+    flex-direction: column;
+    grid-area: side;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-sizing: border-box;
+    padding: 1vh 1vw;
+}
+.anAd
+{
+    padding: 0.5vh 0.5vw;
+    margin-bottom: 1vh;
+    background-color: gray;
+    cursor: pointer;
+}
+
+/*Footer --------------------------*/
+footer
+{
+    grid-area: footer;
+}
+footer li
+{
+    list-style: none;
+}
+footer a
+{
+    color:rgb(223, 229, 252)
+}
+
+
