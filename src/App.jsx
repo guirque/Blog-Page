@@ -16,16 +16,3 @@ export default function App()
     </>
   );
 }
-/*
-  <Navbar>
-    <Icon/>
-    <OptionMenu>
-    <Option/>
-    <Option/>
-    </OptionMenu>
-    <Searchbar/>
-  </Navbar>
-
-*/
-//Background photo by Marc Mintel on Splash
-//https://unsplash.com/pt-br/@mmintel
